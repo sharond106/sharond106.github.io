@@ -124,7 +124,7 @@ a {
 #about-me {
   background: lavender;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   padding: 80px 130px;
 }
 
