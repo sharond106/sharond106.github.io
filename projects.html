@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet">  
+    <script src="script.js"></script>
+  </head>
+  
+  <body>
+    <div class="topnav">
+      <div class="topnav-left">
+        <a href="index.html">Sharon Dong</a>
+      </div>
+      <a href="index.html#contact">Contact</a>
+      <a href="pics.html">Fun Photos</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#about-me">About</a>
+    </div>
+    <div id="pad">
+      <h1>My projects.</h1>
+      <br><br>
+      <div class="grid-3-col">
+        <a href="#poetry">
+          <div class="card">
+            <img src="images/poem.png" alt="Screenshot of poem.">
+            <p>Poetry Generator<br>
+          </div>
+        </a>
+        <a href=#shader>  
+          <div class="card">
+            <img src="images/caterpillar.png" alt="Screenshot of shader.">
+            <p>Real-Time Render<br>
+          </div>
+        </a>
+        <a href="#path-tracer">
+          <div class="card">
+            <img src="images/cornelldirect.png" alt="Screenshot of path tracer.">
+            <p>Monte Carlo Path Tracer<br>
+          </div>
+        </a>
+      </div>
+      <br>
+      <div class="grid-2-col">
+        <a href=#minecraft>  
+          <div class="card">
+            <img src="images/minecraft.png" alt="Screenshot of minecraft.">
+            <p>Mini Minecraft<br>
+          </div>
+        </a>
+        <a href=#maya>  
+          <div class="card">
+            <img src="images/maya.PNG" alt="Screenshot of program.">
+            <p>Mini Maya<br>
+          </div>
+        </a>
+      </div>
+      <br><br><br><br>
+      <div id="poetry">
+        <h2>Poetry Generator (Group Project)</h2>
+        <p>Python<br>A neural network trained to generate poetry by fine-tuning <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a> on a large dataset of poems.
+          Poems can be modified with various inputs, including sampling temperature, title, syllables and characters per line, number of words, number of poems, sentiment, alliteration, and rhyme scheme. 
+          All features are applied to generated poems through post-process methods. While working with David Li and Jake Lem, I was responsible for implementing the sentiment and alliteration modifications. 
+          We also used <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> masking to implement many of the features.
+          <br>
+          Some generations:
+        </p>
+        <table class="projects-table">
+          <tr>
+            <th>Inputs
+            <th>Generations
+          <tr>
+            <td>Lines per Stanza: 3
+              <br>Number of poems: 1
+              <br>Number of words: 200
+              <br>Sentiment: Negative
+              <br>Alliteration: s
+            <td>sick scent of the sea,
+              <br>In the synodic month
+              <br>in the sky supra the sea
+              <br>
+              <br>in the south-side
+              <br>the bitter sour green smell so sour
+              <br>cologne I swear it shall sidesplitte me:
+              <br>
+              <br>You shall see me
+              <br>spreading my skirts out on the snow
+              <br>to spread some in the sun...
+              <br>
+              <br>mock the shadow sooner the sooner —
+              <br>I won't show you what it is I speak of in my sad song —
+              <br>you shall soon be uncertain
+              <br>
+              <br>what it symbolize to be a superpower:
+          <tr>
+            <td>Rhyme Scheme: aabb
+              <br>Unit: Syllables
+              <br>Units per line: 6,10
+              <br>Lines per Stanza: 2
+              <br>Number of words: 200
+            <td>I came away from your
+              <br>battleships of Iwo Jima or sure
+              <br><br>battleships of Pearl till
+              <br>I was a student living in brazil
+              <br><br>dressed in a huge plaid band,
+              <br>tucked into the back seat and By the stand
+              <br><br>opposite a parks
+              <br>made of tin and a concrete, I watched sharks
+              <br><br>running their hooves kills
+              <br>every another toward two hills
+              <br><br>in a straight circle to
+              <br>a distance I could see circling two
+              <br><br>the elephants. What was
+              <br>this moment, this fierce place? What I saw has
+              <br><br>a wonderful loss state
+              <br>history, absolutely great—
+          <tr>
+            <td>Title: Old McDonald Had A Farm
+              <br>Rhyme Scheme: eieio
+              <br>Unit: Syllables
+              <br>Units per line: 6,8,10
+              <br>Lines per Stanza: 5
+            <td>...
+              <br>to see the world that once you mine
+              <br> was your own, a blue sky, the fields that grew
+              <br>were green, your corn and wine
+              <br>that was white, the corn and corn do
+              <br>up like a record. The sun is in now
+              <br><br>sky and the sky is green,
+              <br> and all our corn is now turn
+              <br>green, the fields that once were yellow, my queen
+              <br> with me, you with my learn
+              <br>and our father with me, and
+              <br><br>all our fields begin to turn green, third
+              <br>to see the world that was
+              <br>once your land. the spring air had stirred
+              <br>my spirit into a dance, like a laws
+              <br>of twelve meeting a girl
+              <br><br>of seventeen, a young girl two
+              <br>last act was to dance to an old one who,
+              <br> rather than trying to
+              <br>forget it, was waiting for you
+              <br>to leave for the day that you would be gone.
+              <br>...
+        </table>
+      </div>
+      <br><br><br><br>
+      <div id="shader">
+        <h2>The Very Hungry Caterpillar Shader</h2>
+        <p>WebGL<br>Rendered in real-time with raymarching, inspired by the <a href="https://www.google.com/books/edition/The_Very_Hungry_Caterpillar/A_xtDwAAQBAJ?hl=en&gbpv=0">children's book</a>. 
+          All shapes are 3D primitives represented by signed distance functions with smooth blending or CSG (constructive solid geometry). A depth of field blurring effect is achieved with a post-process gaussian blur linear interpolation. 
+          Most of the textures are created procedurally, using 2D/ 3D fractal brownian motion and worley noise. 
+          See code and real-time render on <a href="https://www.shadertoy.com/view/tdfBR4">ShaderToy</a>.
+        </p>
+        <br><br>
+        <img src="images/caterpillar.gif" alt="GIF of shader.">
+      </div>
+      <br><br><br><br>
+      <div id="path-tracer">
+        <h2>Monte Carlo Path Tracer</h2>
+        <p>C++<br>Full path tracer with direct and global illuminuation. Rays are sampled with multiple importance sampling for estimating direct illumination. I also implemented a full lighting integrator,
+          using both direct and global illumination along with russian roulette ray termination. Materials with different BSDFs (specular, fresnel, microfacet) and different light sources (point, area, spot) are supported. Other 
+          features include a thin-lens camera and CSG (constructive solid geometry).
+        </p>
+        <br><br>
+        <div class="grid-2-col">
+          <img src="images/mirrors.png" alt="Image of render.">
+          <img src="images/tree.png" alt="Image of render.">
+          <p>Full Lighting Integrator<br>Samples per pixel: 400<br>Recursion limit: 8 bounces</p>
+          <p>Full Lighting Integrator<br>Samples per pixel: 900<br>Recursion limit: 8 bounces</p>
+
+          <img src="images/csg.png" alt="Image of render.">
+          <img src="images/spotlight.png" alt="Image of render.">
+          <p>Direct Lighting Integrator<br>Samples per pixel: 100<br>Recursion limit: 5 bounces</p>
+          <p>Full Lighting Integrator<br>Samples per pixel: 100<br>Recursion limit: 5 bounces</p>
+
+          <img src="images/grad.png" alt="Image of render.">
+          <img src="images/gradfull.png" alt="Image of render.">
+          <p>Direct Lighting Integrator<br>Samples per pixel: 100<br>Recursion limit: 5 bounces</p>
+          <p>Full Lighting Integrator<br>Samples per pixel: 100<br>Recursion limit: 5 bounces</p>
+        </div>
+      </div>
+      <br><br><br><br>
+      <div id="minecraft">
+        <h2>Mini Minecraft (Group Project)</h2>
+        <p>C++, OpenGL<br>Basic Minecraft interface that allows the user to move around and modify the terrain. Features include: chuncking terrain generation, procedural terrain, game engine update function and player physics, l-system rivers/ caves/ trees, 
+          textures with animation, multithreaded terrain generation, biomes, procedurally placed trees, and procedural day and night cycle. I was responsible for chunking terrain generation, texturing, and the day and night cycle.<br><br>
+          Chunking (efficient terrain rendering)<br>
+          The terrain is rendered using a "chunk" system where blocks of 16 X 256 X 16 are chunked together. Only the hull, or outside faces, of each chunk is rendered, and special cases like empty blocks, edge blocks, and transparent blocks are handled differently.
+          A single interleaved VBO is used to store block informationn for more efficient processing. <br><br>
+          Texturing<br>
+          All textures are loaded in from 1 image file, and UV information for each block type is stored in the VBO. Animated textures, like water and lava, and transparent textures, like ice, are also implemented. A second VBO is used for transparent blocks, 
+          since opaque blocks are rendered before any transparent ones.<br><br>
+          Procedural sky dome<br>
+          The sky dome is implemented in a fragment shader. UV coordinates for a quad are generated through ray casting to sample colors from interpolating between hard coded color palettes that correspond to different time values. The terrain is lit 
+          from the rotating sun/ moon.
+        </p>
+        <br><br>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/1euXB-WI6dE" alt="Demo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <br><br><br><br>
+      <div id="maya">
+        <h2>Mini Maya</h2>
+        <p>C++, OpenGL<br>Mesh editor based off of <a href="https://www.autodesk.com/products/maya/overview?support=ADVANCED">Autodesk Maya</a>. A half-edge data structure is used to support mesh topology editing operations including: splitting edges, triangulating faces, extruding faces, and smoothing mesh by catmull-clark subdivision. 
+          Meshes can be loaded in through OBJ files and skeletons through JSON files, where the data is parsed to form a half-edge mesh. The skeleton joints are stored in a scene graph tree, and are interactive through a GUI. 
+          I used the skeleton to implement mesh skinning and shader-based skin deformation, where a simple distance based linear blend skinning algorithm is used.
+        </p>
+        <br><br>
+        <div class="grid-2-col">
+          <img src="images/cow.PNG" alt="Image of cow obj.">
+          <img src="images/cow2.PNG" alt="Image of cow skeleton.">
+          <p>Imported from OBJ and JSON files</p>
+          <p>Skin deformation</p>
+        </div>
+        <div class="grid-3-col">
+          <img src="images/cube.PNG" alt="Image of cube.">
+          <img src="images/smooth.PNG" alt="Image of smoothed cube.">
+          <img src="images/dodec.PNG" alt="Image of smoothed dodecahedron.">
+          <p>Original cube</p>
+          <p>Smoothed cube</p>
+          <p>Dodecahedron with extruded and triangulated faces</p>
+        </div>
+        <br><br>
+      </div>
+    </div>
+    <button onclick="topFunction()" id="to-top-btn" title="Go to top"> ^ </button>
+    <script>scrollFunction();</script>
+  </body>
+</html>
