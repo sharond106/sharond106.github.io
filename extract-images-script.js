@@ -59,18 +59,7 @@ $(document).ready(function() {
       document.getElementById("loading").innerHTML = "Uploading video...";
       document.getElementById("loader").style.display = "block"
       const option = getShotsOption();
-      // Create a ForData object containing the file information
-      const form = $("form")[0];
-      const form_data = new FormData(form);
-      // Create ajax request with the form data
-      $.ajax({
-        type: $(this).attr("method"),     // Use the form's 'method' attribute
-        url: $(this).attr("action"),      // Use the form's 'action attribute
-        data: form_data,                  // Send the video file which is stored in a FormData
-        processData: false,               // Set as false so that 'data' will not be transformed into a query string
-        contentType: false,               // Must be false for sending our content type (multipart/form-data)
-        success: function(data) {
-          // Determine which option was selected and call correct function
+
           if (option === "detectOption") {
             getShots();
           } else if (option === "intervalOption") {
@@ -78,14 +67,7 @@ $(document).ready(function() {
           } else {
             setupManualCapture();
           }
-        },
-        error: function (data) {
-          document.getElementById("loader").style.display = "none";
-          document.getElementById("loading").innerHTML = "";
-          submitting = false;
-          alert("Sorry! An error occured while trying to upload your video. Please refresh the page and try again.")
-        }
-      });
+    
     }
   });
 });
