@@ -242,15 +242,7 @@ th {
   text-align: left;
 }
 
-.video-container {
-  height: 0;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
-}
-
-.video-container iframe {
+iframe {
   height: 50%;
   left: 0;
   position: absolute;
