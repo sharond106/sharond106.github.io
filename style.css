@@ -31,9 +31,9 @@ img {
 }
 
 a {
-  color: #8e8ead;
-  background-color: transparent;
   text-decoration: none;
+	padding-bottom: 3px;
+	border-bottom: 1px solid blue;
 }
 
 .topnav {
