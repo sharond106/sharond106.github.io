@@ -157,6 +157,24 @@ a {
   text-align: center;
 }
 
+.fa {
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 22px;
+  width: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
 /* Projects Page */
 
 .card {
