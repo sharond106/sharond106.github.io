@@ -247,7 +247,10 @@ function captureFrame(path, shot) {
  */
 function postFrame(canvas, shot) {
   var img = document.createElement("img");
+  canvas.toBlob(function(thisblob) {
+    img.src = URL.createObjectURL(thisblob);
   
+  });
   return img;
 }
 
