@@ -246,7 +246,9 @@ function captureFrame(path, shot) {
  * @return {HTMLElement}: An img element containing the frame's src
  */
 function postFrame(canvas, shot) {
+  var img = document.createElement("img");
   
+  return img;
 }
 
 
