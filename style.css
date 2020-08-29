@@ -243,9 +243,8 @@ th {
 }
 
 iframe {
-  height: 50%;
-  left: 0;
-  position: absolute;
-  top:0;
-  width: 50%;
+  height: 360px;
+  width: 640px;
+  max-height: 100%;
+  max-width: 100%;
 }
