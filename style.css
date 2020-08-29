@@ -31,9 +31,7 @@ img {
 }
 
 a {
-  text-decoration: none;
-	padding-bottom: 3px;
-	border-bottom: 1px solid blue;
+  text-decoration: underline;
 }
 
 .topnav {
