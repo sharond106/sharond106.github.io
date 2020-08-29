@@ -1,0 +1,58 @@
+/* Main Index Page CSS */
+body, html {
+  height: 100%;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif; 
+  background-color: #ffffff;
+  color: #000000; 
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 70px;
+}
+
+h1 {
+  color: #4285f4;
+  font-size: em;
+  font-weight: 500;
+  padding-top: 30px;
+}
+
+h2 {
+  font-weight: 300;
+  padding-top: 20px;
+}
+
+p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar {
+  background-color: #4285f4;
+  width: 100%;
+}
+
+.navbar-brand {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 800;
+}
+
+.navbar-dark .navbar-toggler {
+  border: 2px solid rgba(255, 255, 255, .6); 
+}
+
+.fa-bars {
+  color: rgba(255, 255, 255, .7);
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, .7);
+  font-weight: 500;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  transform: translate(0px, 0px) scale(1.1);
+  color: rgba(255, 255, 255, 1);
+}
