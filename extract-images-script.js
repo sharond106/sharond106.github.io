@@ -246,41 +246,9 @@ function captureFrame(path, shot) {
  * @return {HTMLElement}: An img element containing the frame's src
  */
 function postFrame(canvas, shot) {
-  var img = document.createElement("img");
-  canvas.toBlob(function(thisblob) {
-    img.src = URL.createObjectURL(thisblob);
-    
-    // Upload blob to Cloud bucket by triggering the form's submit button
-    blob = thisblob;
-    blobShotObject = shot;
-    document.getElementById("image-form-button").click();
-  });
-  return img;
+  
 }
 
-// Ajax code that submits image form
-$(document).ready(function() {
-  $("#post-keyframe-img").submit(function(event){
-    // Cancel any default action normally occuring when the form submission triggers
-    event.preventDefault(); 
-    // Create FormData object containing the image information
-    var form_data = new FormData();
-    form_data.append("image", blob);
-    form_data.append("timestamp", blobShotObject.timestamp);
-    form_data.append("isManuallySelected", blobShotObject.manuallyCaptured);
-    // Create ajax request with the FormData
-    $.ajax({
-      type: $(this).attr("method"),
-      url: $(this).attr("action"),
-      data: form_data,
-      processData: false,
-      contentType: false,
-      complete: function(data) {
-        return;
-      }
-    });
-  });
-});
 
 /** 
  * Adds captured frame to html page
